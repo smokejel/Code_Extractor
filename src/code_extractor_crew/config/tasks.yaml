@@ -1,0 +1,39 @@
+parse_code:
+  description: >
+    Parse all of the C code files in the directory and extract the Abstract Syntax Tree (AST).
+  expected_output: >
+    A JSON representation of the AST.
+  agent: code_parser
+  output_file: ast.json
+
+analyze_control_flow:
+  description: >
+    Analyze the control flow of the code using the AST."
+  expected_output: >
+    A description of the control flow paths and dependencies."
+  agent: control_flow_analyzer
+  output_file: control_flow_analysis.md
+
+analyze_data_flow:
+  description: >
+    Analyze the data flow of the code using the AST.
+  expected_output: >
+    A description of the data flow paths and dependencies.
+  agent: data_flow_analyzer
+  output_file: data_flow_analysis.md
+
+synthesize_requirements:
+  description: >
+    Using the control and data flow analysis, generate a set of initial requirement statements.
+  expected_output: >
+    A set of requirement statements.
+  agent: requirement_synthesizer
+  output_file: code_requirements.md
+
+validate_requirements:
+  description: >
+    Validate the generated requirement statements against the original C code.
+  expected_output: >
+    A set of validated requirement statements.
+  agent: requirement_validator
+  output_file: validated_requirements.md

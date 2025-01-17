@@ -1,0 +1,5 @@
+code_parser:
+  type: crewai.tools.DirectorySearchTool
+  description: Search for files in a directory.
+  args: >
+    directory: "/code_repository/"
