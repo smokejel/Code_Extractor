@@ -24,7 +24,8 @@ analyze_data_flow:
 
 synthesize_requirements:
   description: >
-    Using the control and data flow analysis, generate a set of initial requirement statements.
+    Using the control and data flow analysis, generate a set of initial requirement statements. Requirements should be clear,
+    concise, and testable. Include both functional and non-functional requirements. Use requirements engineering best practices.
   expected_output: >
     A set of requirement statements.
   agent: requirement_synthesizer
@@ -32,7 +33,7 @@ synthesize_requirements:
 
 validate_requirements:
   description: >
-    Validate the generated requirement statements against the original C code.
+    Validate the generated requirement statements against the original code.
   expected_output: >
     A set of validated requirement statements.
   agent: requirement_validator

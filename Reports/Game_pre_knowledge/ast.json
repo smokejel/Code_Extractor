@@ -1,0 +1,443 @@
+```json
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "IncludeDirective",
+      "library": "stdlib.h"
+    },
+    {
+      "type": "IncludeDirective",
+      "library": "stdio.h"
+    },
+    {
+      "type": "IncludeDirective",
+      "library": "time.h"
+    },
+    {
+      "type": "IncludeDirective",
+      "library": "stdbool.h"
+    },
+    {
+      "type": "IncludeDirective",
+      "library": "math.h"
+    },
+    {
+      "type": "Define",
+      "name": "MAX",
+      "value": 10
+    },
+    {
+      "type": "Define",
+      "name": "A",
+      "value": "P"
+    },
+    {
+      "type": "Define",
+      "name": "B",
+      "value": "Q"
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "getRandom",
+      "returnType": "int",
+      "parameters": [
+        {
+          "name": "low",
+          "type": "int"
+        },
+        {
+          "name": "high",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "getValidInteger",
+      "returnType": "int",
+      "parameters": [
+        {
+          "name": "low",
+          "type": "int"
+        },
+        {
+          "name": "high",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "playerRoll",
+      "returnType": "unsigned int",
+      "parameters": [
+        {
+          "name": "low",
+          "type": "int"
+        },
+        {
+          "name": "high",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "seed",
+      "returnType": "void",
+      "parameters": []
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "space",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "getDisplayType",
+      "returnType": "char",
+      "parameters": [
+        {
+          "name": "index",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerPosition",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerName",
+          "type": "char"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "firstLine",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "secondLine",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        },
+        {
+          "name": "i",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerPosition",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerName",
+          "type": "char"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "secondLine2nd",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        },
+        {
+          "name": "i",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerPosition",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerName",
+          "type": "char"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "thirdLine",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "upperrow",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "lowerrow",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "middlerow",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        },
+        {
+          "name": "i",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerPosition",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerName",
+          "type": "char"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "getValidCharacter",
+      "returnType": "char",
+      "parameters": [
+        {
+          "name": "a",
+          "type": "char"
+        },
+        {
+          "name": "b",
+          "type": "char"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "getValidInteger",
+      "returnType": "int",
+      "parameters": [
+        {
+          "name": "low",
+          "type": "int"
+        },
+        {
+          "name": "high",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "getRandom",
+      "returnType": "int",
+      "parameters": [
+        {
+          "name": "low",
+          "type": "int"
+        },
+        {
+          "name": "high",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "playerRoll",
+      "returnType": "unsigned int",
+      "parameters": [
+        {
+          "name": "low",
+          "type": "int"
+        },
+        {
+          "name": "high",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "winPrize",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "playerPrizes",
+          "type": "int[]"
+        },
+        {
+          "name": "prizeCount",
+          "type": "unsigned int*"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "winGrandPrize",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "playerPrizes",
+          "type": "int[]"
+        },
+        {
+          "name": "prizeCount",
+          "type": "unsigned int*"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "loseItem",
+      "returnType": "int",
+      "parameters": [
+        {
+          "name": "playerPrizes",
+          "type": "int[]"
+        },
+        {
+          "name": "prizeCount",
+          "type": "unsigned int*"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "initPlayer",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "playerScore",
+          "type": "int*"
+        },
+        {
+          "name": "playerPrizes",
+          "type": "int[]"
+        },
+        {
+          "name": "prizeCount",
+          "type": "unsigned int*"
+        },
+        {
+          "name": "playerName",
+          "type": "char*"
+        },
+        {
+          "name": "playerPosition",
+          "type": "int*"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "displayBoard",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerPosition",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerName",
+          "type": "char"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "checkout",
+      "returnType": "int",
+      "parameters": [
+        {
+          "name": "playerScore",
+          "type": "int*"
+        },
+        {
+          "name": "playerPrizes",
+          "type": "int[]"
+        },
+        {
+          "name": "prizeCount",
+          "type": "unsigned int*"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "playGame",
+      "returnType": "void",
+      "parameters": [
+        {
+          "name": "size",
+          "type": "unsigned int"
+        },
+        {
+          "name": "playerScore",
+          "type": "int*"
+        },
+        {
+          "name": "playerPrizes",
+          "type": "int[]"
+        },
+        {
+          "name": "prizeCount",
+          "type": "unsigned int*"
+        },
+        {
+          "name": "playerName",
+          "type": "char*"
+        },
+        {
+          "name": "playerPosition",
+          "type": "int*"
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "main",
+      "returnType": "int",
+      "parameters": []
+    }
+  ]
+}
+```

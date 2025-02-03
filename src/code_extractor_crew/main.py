@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys
+import sys, time
 import warnings
 
 from code_extractor_crew.crew import CodeExtractorCrew
@@ -18,7 +18,15 @@ def run():
     inputs = {
         'topic': 'AI LLMs'
     }
+    print("## Welcome to Code Extractor Crew")
+    print('-------------------------------')
+    start = time.time()
     CodeExtractorCrew().crew().kickoff(inputs=inputs)
+    end = time.time()
+    print("\n\n########################")
+    print("Reports Generated")
+    print("Time taken: ", end - start, " seconds")
+    print("########################\n")
 
 
 def train():

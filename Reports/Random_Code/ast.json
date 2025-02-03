@@ -1,0 +1,1312 @@
+```json
+{
+  "files": [
+    {
+      "filename": "05_problem5.c",
+      "AST": {
+        "type": "Program",
+        "body": [
+          {
+            "type": "FunctionDeclaration",
+            "name": "main",
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "n",
+                      "init": {
+                        "type": "NumericLiteral",
+                        "value": 10
+                      }
+                    }
+                  ],
+                  "kind": "int"
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "ptr",
+                      "init": null
+                    }
+                  ],
+                  "kind": "int*"
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "malloc",
+                    "arguments": [
+                      {
+                        "type": "BinaryExpression",
+                        "left": "n",
+                        "operator": "*",
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": "sizeof",
+                          "arguments": ["int"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "MemberExpression",
+                          "object": "ptr",
+                          "property": "i"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "BinaryExpression",
+                          "left": {
+                            "type": "NumericLiteral",
+                            "value": 7
+                          },
+                          "operator": "*",
+                          "right": {
+                            "type": "BinaryExpression",
+                            "left": "i",
+                            "operator": "+",
+                            "right": {
+                              "type": "NumericLiteral",
+                              "value": 1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": "printf",
+                  "arguments": ["The Array is \n"]
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "left": {
+                              "type": "NumericLiteral",
+                              "value": "%d \n"
+                            },
+                            "operator": ",",
+                            "right": {
+                              "type": "MemberExpression",
+                              "object": "ptr",
+                              "property": "i"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "n",
+                  "operator": "=",
+                  "right": {
+                    "type": "NumericLiteral",
+                    "value": 15
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "realloc",
+                    "arguments": [
+                      "ptr",
+                      {
+                        "type": "BinaryExpression",
+                        "left": {
+                          "type": "NumericLiteral",
+                          "value": 10
+                        },
+                        "operator": "*",
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": "sizeof",
+                          "arguments": ["int"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "MemberExpression",
+                          "object": "ptr",
+                          "property": "i"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "BinaryExpression",
+                          "left": {
+                            "type": "NumericLiteral",
+                            "value": 7
+                          },
+                          "operator": "*",
+                          "right": {
+                            "type": "BinaryExpression",
+                            "left": "i",
+                            "operator": "+",
+                            "right": {
+                              "type": "NumericLiteral",
+                              "value": 1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": "printf",
+                  "arguments": ["The Array is \n"]
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "left": {
+                              "type": "NumericLiteral",
+                              "value": "%d \n"
+                            },
+                            "operator": ",",
+                            "right": {
+                              "type": "MemberExpression",
+                              "object": "ptr",
+                              "property": "i"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "filename": "02_problem2.c",
+      "AST": {
+        "type": "Program",
+        "body": [
+          {
+            "type": "FunctionDeclaration",
+            "name": "main",
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "n",
+                      "init": {
+                        "type": "NumericLiteral",
+                        "value": 6
+                      }
+                    }
+                  ],
+                  "kind": "int"
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "ptr",
+                      "init": null
+                    }
+                  ],
+                  "kind": "int*"
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "malloc",
+                    "arguments": [
+                      {
+                        "type": "BinaryExpression",
+                        "left": "n",
+                        "operator": "*",
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": "sizeof",
+                          "arguments": ["int"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "scanf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d \n"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "filename": "03_problem3.c",
+      "AST": {
+        "type": "Program",
+        "body": [
+          {
+            "type": "FunctionDeclaration",
+            "name": "main",
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "n",
+                      "init": {
+                        "type": "NumericLiteral",
+                        "value": 6
+                      }
+                    }
+                  ],
+                  "kind": "int"
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "ptr",
+                      "init": null
+                    }
+                  ],
+                  "kind": "int*"
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "calloc",
+                    "arguments": [
+                      {
+                        "type": "NumericLiteral",
+                        "value": "n"
+                      },
+                      {
+                        "type": "CallExpression",
+                        "callee": "sizeof",
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "int"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "scanf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d \n"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "filename": "04_problem4.c",
+      "AST": {
+        "type": "Program",
+        "body": [
+          {
+            "type": "FunctionDeclaration",
+            "name": "main",
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "n",
+                      "init": {
+                        "type": "NumericLiteral",
+                        "value": 5
+                      }
+                    }
+                  ],
+                  "kind": "int"
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "ptr",
+                      "init": null
+                    }
+                  ],
+                  "kind": "int*"
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "calloc",
+                    "arguments": [
+                      {
+                        "type": "NumericLiteral",
+                        "value": "n"
+                      },
+                      {
+                        "type": "CallExpression",
+                        "callee": "sizeof",
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "int"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": "printf",
+                  "arguments": ["The Array is \n"]
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d \n"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "n",
+                  "operator": "=",
+                  "right": {
+                    "type": "NumericLiteral",
+                    "value": 10
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "realloc",
+                    "arguments": [
+                      "ptr",
+                      {
+                        "type": "BinaryExpression",
+                        "left": {
+                          "type": "NumericLiteral",
+                          "value": 10
+                        },
+                        "operator": "*",
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": "sizeof",
+                          "arguments": ["int"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "scanf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": "printf",
+                  "arguments": ["The Array is \n"]
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d \n"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "filename": "01_problem1.c",
+      "AST": {
+        "type": "Program",
+        "body": [
+          {
+            "type": "FunctionDeclaration",
+            "name": "main",
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "n",
+                      "init": {
+                        "type": "NumericLiteral",
+                        "value": 6
+                      }
+                    }
+                  ],
+                  "kind": "int"
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "ptr",
+                      "init": null
+                    }
+                  ],
+                  "kind": "int*"
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "malloc",
+                    "arguments": [
+                      {
+                        "type": "BinaryExpression",
+                        "left": "n",
+                        "operator": "*",
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": "sizeof",
+                          "arguments": ["int"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": {
+                    "type": "MemberExpression",
+                    "object": "ptr",
+                    "property": 0
+                  },
+                  "operator": "=",
+                  "right": {
+                    "type": "NumericLiteral",
+                    "value": 45
+                  }
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": "printf",
+                  "arguments": [
+                    {
+                      "type": "StringLiteral",
+                      "value": "%d \n"
+                    },
+                    {
+                      "type": "MemberExpression",
+                      "object": "ptr",
+                      "property": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "filename": "06_problem6.c",
+      "AST": {
+        "type": "Program",
+        "body": [
+          {
+            "type": "FunctionDeclaration",
+            "name": "main",
+            "params": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "n",
+                      "init": {
+                        "type": "NumericLiteral",
+                        "value": 10
+                      }
+                    }
+                  ],
+                  "kind": "int"
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": "ptr",
+                      "init": null
+                    }
+                  ],
+                  "kind": "int*"
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "calloc",
+                    "arguments": [
+                      {
+                        "type": "NumericLiteral",
+                        "value": "n"
+                      },
+                      {
+                        "type": "CallExpression",
+                        "callee": "sizeof",
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "int"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "MemberExpression",
+                          "object": "ptr",
+                          "property": "i"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "BinaryExpression",
+                          "left": {
+                            "type": "NumericLiteral",
+                            "value": 7
+                          },
+                          "operator": "*",
+                          "right": {
+                            "type": "BinaryExpression",
+                            "left": "i",
+                            "operator": "+",
+                            "right": {
+                              "type": "NumericLiteral",
+                              "value": 1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": "printf",
+                  "arguments": ["The Array is \n"]
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d \n"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "n",
+                  "operator": "=",
+                  "right": {
+                    "type": "NumericLiteral",
+                    "value": 15
+                  }
+                },
+                {
+                  "type": "AssignmentExpression",
+                  "left": "ptr",
+                  "operator": "=",
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": "realloc",
+                    "arguments": [
+                      "ptr",
+                      {
+                        "type": "BinaryExpression",
+                        "left": {
+                          "type": "NumericLiteral",
+                          "value": 10
+                        },
+                        "operator": "*",
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": "sizeof",
+                          "arguments": ["int"]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ForStatement",
+                  "init": {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": "i",
+                        "init": {
+                          "type": "NumericLiteral",
+                          "value": 0
+                        }
+                      }
+                    ],
+                    "kind": "int"
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "left": "i",
+                    "operator": "<",
+                    "right": "n"
+                  },
+                  "update": {
+                    "type": "UpdateExpression",
+                    "operator": "++",
+                    "argument": "i"
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "CallExpression",
+                        "callee": "printf",
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "value": "%d \n"
+                          },
+                          {
+                            "type": "MemberExpression",
+                            "object": "ptr",
+                            "property": "i"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NumericLiteral",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```

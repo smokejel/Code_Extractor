@@ -1,13 +1,11 @@
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai_tools import DirectoryReadTool, FileReadTool
+from crewai.knowledge.source.pdf_knowledge_source import PDFKnowledgeSource
 from crewai.project import CrewBase, agent, crew, task
-llm_google = LLM(model="gemini/gemini-1.5-pro",  temperature=0.7, convert_system_message_to_human=True)
+llm_google = LLM(model="gemini/gemini-1.5-pro",  temperature=0.7)
 llm_openai = LLM(model="gpt-4o-mini", temperature=0.7)
-llm_local = LLM(model="ollama/mixtral:8x7b", base_url="http://localhost:11434")
+llm_local = LLM(model="ollama/deepseek-r1:14b", base_url="http://localhost:11434")
 
-# Instantiate tools
-docs_tool = DirectoryReadTool(directory='/Users/mdsweatt/Documents/Pycharm_Projects/Code_Extractor_Crew/code_repository')
-file_tool = FileReadTool()
 
 @CrewBase
 class CodeExtractorCrew():
@@ -15,13 +13,20 @@ class CodeExtractorCrew():
 
 	agents_config = 'config/agents.yaml'
 	tasks_config = 'config/tasks.yaml'
+	# Instantiate tools
+	docs_tool = DirectoryReadTool(directory='/Users/mdsweatt/Documents/Pycharm_Projects/Code_Extractor_Crew/code_repository')
+	file_tool = FileReadTool()
+
+	pdf_knowledge_source = PDFKnowledgeSource(
+		file_paths=['37_Requirements_10_Best_Practices.pdf']
+	)
 
 	@agent
 	def code_parser(self) -> Agent:
 		return Agent(
 			config=self.agents_config['code_parser'],
 			verbose=True,
-			tools=[docs_tool, file_tool],
+			tools=[self.docs_tool, self.file_tool],
 			llm=llm_openai
 		)
 
@@ -30,7 +35,7 @@ class CodeExtractorCrew():
 		return Agent(
 			config=self.agents_config['control_flow_analyzer'],
 			verbose=True,
-			tools=[docs_tool, file_tool],
+			tools=[self.docs_tool, self.file_tool],
 			llm=llm_openai
 		)
 
@@ -39,7 +44,7 @@ class CodeExtractorCrew():
 		return Agent(
 			config=self.agents_config['data_flow_analyzer'],
 			verbose=True,
-			tools=[docs_tool, file_tool],
+			tools=[self.docs_tool, self.file_tool],
 			llm=llm_openai
 		)
 
@@ -48,7 +53,7 @@ class CodeExtractorCrew():
 		return Agent(
 			config=self.agents_config['requirement_synthesizer'],
 			verbose=True,
-			tools=[docs_tool, file_tool],
+			knowledge_sources=[self.pdf_knowledge_source],
 			llm=llm_openai
 		)
 
@@ -57,7 +62,7 @@ class CodeExtractorCrew():
 		return Agent(
 			config=self.agents_config['requirement_validator'],
 			verbose=True,
-			tools=[docs_tool, file_tool],
+			tools=[self.docs_tool, self.file_tool],
 			llm=llm_openai
 		)
 
@@ -101,5 +106,6 @@ class CodeExtractorCrew():
 			tasks=self.tasks, # Automatically created by the @task decorator
 			process=Process.sequential,
 			verbose=True,
+			chat_llm=llm_openai,
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 		)
